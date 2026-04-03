@@ -47,3 +47,6 @@ next-env.d.ts
 # Uploads / temp
 uploads/
 tmp/
+
+# Local Netlify folder
+.netlify

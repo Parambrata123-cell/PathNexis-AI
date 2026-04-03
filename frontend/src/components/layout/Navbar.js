@@ -12,16 +12,14 @@ export default function Navbar() {
 
   const isLanding = pathname === '/';
 
-  const navLinks = isAuthenticated
-    ? [
-        { href: '/dashboard', label: 'Dashboard', icon: '📊' },
-        { href: '/resume-analyzer', label: 'Resume', icon: '📄' },
-        { href: '/learning-roadmap', label: 'Roadmap', icon: '🗺️' },
-        { href: '/alumni-network', label: 'Alumni', icon: '👥' },
-        { href: '/referral-marketplace', label: 'Referrals', icon: '🔗' },
-        { href: '/mock-interview', label: 'Interview', icon: '🎙️' },
-      ]
-    : [];
+  const navLinks = [
+    { href: '/dashboard', label: 'Dashboard', icon: '📊' },
+    { href: '/resume-analyzer', label: 'Resume', icon: '📄' },
+    { href: '/learning-roadmap', label: 'Roadmap', icon: '🗺️' },
+    { href: '/alumni-network', label: 'Alumni', icon: '👥' },
+    { href: '/referral-marketplace', label: 'Referrals', icon: '🔗' },
+    { href: '/mock-interview', label: 'Interview', icon: '🎙️' },
+  ];
 
   return (
     <nav className={`${styles.navbar} ${isLanding ? styles.landing : ''}`}>

@@ -19,8 +19,10 @@ export default function ResumeAnalyzerPage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (!authLoading && !isAuthenticated) router.push('/login');
-  }, [authLoading, isAuthenticated, router]);
+    if (!authLoading && !isAuthenticated) {
+      window.location.href = '/login';
+    }
+  }, [authLoading, isAuthenticated]);
 
   useEffect(() => {
     if (isAuthenticated) {
