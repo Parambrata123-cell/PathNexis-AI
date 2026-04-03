@@ -9,7 +9,7 @@ const auth = (req, res, next) => {
 
     const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : authHeader;
 
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    const verified = jwt.verify(token, process.env.JWT_SECRET || 'pathnexis_secret');
     req.user = verified;
     next();
   } catch (err) {
@@ -22,7 +22,7 @@ const optionalAuth = (req, res, next) => {
     const authHeader = req.header('Authorization');
     if (authHeader) {
       const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : authHeader;
-      req.user = jwt.verify(token, process.env.JWT_SECRET);
+      req.user = jwt.verify(token, process.env.JWT_SECRET || 'pathnexis_secret');
     }
   } catch (err) {
     // Continue without auth
